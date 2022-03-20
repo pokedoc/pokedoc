@@ -40,7 +40,7 @@
             body {background-color: black;}
             .btnDiv {margin-top:20px;}
             .title {text-align:center; font-size:20px; margin-bottom:20px; color:white;}
-            .linkStr {width:600px;}
+            .linkStr {width:500px;}
             .linkLabel {color:white;}
         </style>
         <meta charset="UTF-8">
@@ -230,7 +230,7 @@
     var code = param.get('code');
 
     var linkStr = document.getElementById('linkStr');
-        linkStr.value = url + code;
+        linkStr.value = url + (code?code:'');
 
     var image = document.querySelectorAll('.image');
     var decoded = decode(code);
