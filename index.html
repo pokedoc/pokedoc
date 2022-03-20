@@ -40,7 +40,7 @@
             body {background-color: black;}
             .btnDiv {margin-top:20px;}
             .title {text-align:center; font-size:20px; margin-bottom:20px; color:white;}
-            .linkStr {width:300px;}
+            .linkStr {width:600px;}
             .linkLabel {color:white;}
         </style>
         <meta charset="UTF-8">
@@ -209,12 +209,13 @@
         <div class="image poke07 img09"></div>
         <div class="btnDiv">
             <input type="button" id="reverseBtn" value="선택반전"/>
-            <label class="linkLabel" for="linkStr">코드 : </label>
-            <input type="text" id="linkStr" class="linkStr" value="" maxlength="27"/>
+            <label class="linkLabel" for="linkStr">URL : </label>
+            <input type="text" id="linkStr" class="linkStr" value="https://pokedoc.github.io/pokedoc/?code=" />
         </div>
     </body>
 </html>
 <script>
+    var url = 'https://pokedoc.github.io/pokedoc/?code=';
     var digits = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/';
     var binArray = ['000000','000001','000010','000011','000100','000101','000110','000111',
                       '001000','001001','001010','001011','001100','001101','001110','001111',
@@ -229,7 +230,7 @@
     var code = param.get('code');
 
     var linkStr = document.getElementById('linkStr');
-        linkStr.value = code;
+        linkStr.value = url + code;
 
     var image = document.querySelectorAll('.image');
     var decoded = decode(code);
@@ -264,7 +265,7 @@
             codeStr += (image[i].classList.contains('selected')?'1':'0');
         }
         var linkStr = document.getElementById('linkStr');
-        linkStr.value = encode(codeStr + '000');
+        linkStr.value = url + encode(codeStr + '000');
     }
 
     function decode(code) {
