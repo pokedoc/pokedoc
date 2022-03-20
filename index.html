@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            div:not(.selected):HOVER, .selected {background-blend-mode: multiply;}
+            .selected:HOVER {background-blend-mode:initial;}
+            .poke01 {background:url("pokemon1.jpg") no-repeat rgba(0, 0, 0, 0.7);}
+            .poke02 {background:url("pokemon2.jpg") no-repeat rgba(0, 0, 0, 0.7);}
+            .poke03 {background:url("pokemon3.jpg") no-repeat rgba(0, 0, 0, 0.7);}
+            .poke04 {background:url("pokemon4.jpg") no-repeat rgba(0, 0, 0, 0.7);}
+            .poke05 {background:url("pokemon5.jpg") no-repeat rgba(0, 0, 0, 0.7);}
+            .poke06 {background:url("pokemon6.jpg") no-repeat rgba(0, 0, 0, 0.7);}
+            .poke07 {background:url("pokemon7.jpg") no-repeat rgba(0, 0, 0, 0.7);}
+            .image {display:inline-block; width:83px; height:109px; border: 1px solid black; cursor:pointer;}
+            .img01 {background-position: -126px -36px}
+            .img02 {background-position: -219px -36px;}
+            .img03 {background-position: -312px -36px;}
+            .img04 {background-position: -405px -36px;}
+            .img05 {background-position: -498px -36px;}
+            .img06 {background-position: -126px -154px;}
+            .img07 {background-position: -219px -154px;}
+            .img08 {background-position: -312px -154px;}
+            .img09 {background-position: -405px -154px;}
+            .img10 {background-position: -498px -154px;}
+            .img11 {background-position: -126px -272px;}
+            .img12 {background-position: -219px -272px;}
+            .img13 {background-position: -312px -272px;}
+            .img14 {background-position: -405px -272px;}
+            .img15 {background-position: -498px -272px;}
+            .img16 {background-position: -126px -391px;}
+            .img17 {background-position: -219px -391px;}
+            .img18 {background-position: -312px -391px;}
+            .img19 {background-position: -405px -391px;}
+            .img20 {background-position: -498px -391px;}
+            .img21 {background-position: -126px -509px;}
+            .img22 {background-position: -219px -509px;}
+            .img23 {background-position: -312px -509px;}
+            .img24 {background-position: -405px -509px;}
+            .img25 {background-position: -498px -509px;}
+            body {background-color: black;}
+            .btnDiv {margin-top:20px;}
+            .title {text-align:center; font-size:20px; margin-bottom:20px; color:white;}
+            .linkStr {width:300px;}
+            .linkLabel {color:white;}
+        </style>
+        <meta charset="UTF-8">
+        <title>HTML Intro</title>
+    </head>
+    <body>
+        <div class="title">포켓몬스터 2022 띠부띠부씰 도감 ver 1.0</div>
+        <div class="image poke01 img01"></div>
+        <div class="image poke01 img02"></div>
+        <div class="image poke01 img03"></div>
+        <div class="image poke01 img04"></div>
+        <div class="image poke01 img05"></div>
+        <div class="image poke01 img06"></div>
+        <div class="image poke01 img07"></div>
+        <div class="image poke01 img08"></div>
+        <div class="image poke01 img09"></div>
+        <div class="image poke01 img10"></div>
+        <div class="image poke01 img11"></div>
+        <div class="image poke01 img12"></div>
+        <div class="image poke01 img13"></div>
+        <div class="image poke01 img14"></div>
+        <div class="image poke01 img15"></div>
+        <div class="image poke01 img16"></div>
+        <div class="image poke01 img17"></div>
+        <div class="image poke01 img18"></div>
+        <div class="image poke01 img19"></div>
+        <div class="image poke01 img20"></div>
+        <div class="image poke01 img21"></div>
+        <div class="image poke01 img22"></div>
+        <div class="image poke01 img23"></div>
+        <div class="image poke01 img24"></div>
+        <div class="image poke01 img25"></div>
+        <div class="image poke02 img01"></div>
+        <div class="image poke02 img02"></div>
+        <div class="image poke02 img03"></div>
+        <div class="image poke02 img04"></div>
+        <div class="image poke02 img05"></div>
+        <div class="image poke02 img06"></div>
+        <div class="image poke02 img07"></div>
+        <div class="image poke02 img08"></div>
+        <div class="image poke02 img09"></div>
+        <div class="image poke02 img10"></div>
+        <div class="image poke02 img11"></div>
+        <div class="image poke02 img12"></div>
+        <div class="image poke02 img13"></div>
+        <div class="image poke02 img14"></div>
+        <div class="image poke02 img15"></div>
+        <div class="image poke02 img16"></div>
+        <div class="image poke02 img17"></div>
+        <div class="image poke02 img18"></div>
+        <div class="image poke02 img19"></div>
+        <div class="image poke02 img20"></div>
+        <div class="image poke02 img21"></div>
+        <div class="image poke02 img22"></div>
+        <div class="image poke02 img23"></div>
+        <div class="image poke02 img24"></div>
+        <div class="image poke02 img25"></div>
+        <div class="image poke03 img01"></div>
+        <div class="image poke03 img02"></div>
+        <div class="image poke03 img03"></div>
+        <div class="image poke03 img04"></div>
+        <div class="image poke03 img05"></div>
+        <div class="image poke03 img06"></div>
+        <div class="image poke03 img07"></div>
+        <div class="image poke03 img08"></div>
+        <div class="image poke03 img09"></div>
+        <div class="image poke03 img10"></div>
+        <div class="image poke03 img11"></div>
+        <div class="image poke03 img12"></div>
+        <div class="image poke03 img13"></div>
+        <div class="image poke03 img14"></div>
+        <div class="image poke03 img15"></div>
+        <div class="image poke03 img16"></div>
+        <div class="image poke03 img17"></div>
+        <div class="image poke03 img18"></div>
+        <div class="image poke03 img19"></div>
+        <div class="image poke03 img20"></div>
+        <div class="image poke03 img21"></div>
+        <div class="image poke03 img22"></div>
+        <div class="image poke03 img23"></div>
+        <div class="image poke03 img24"></div>
+        <div class="image poke03 img25"></div>
+        <div class="image poke04 img01"></div>
+        <div class="image poke04 img02"></div>
+        <div class="image poke04 img03"></div>
+        <div class="image poke04 img04"></div>
+        <div class="image poke04 img05"></div>
+        <div class="image poke04 img06"></div>
+        <div class="image poke04 img07"></div>
+        <div class="image poke04 img08"></div>
+        <div class="image poke04 img09"></div>
+        <div class="image poke04 img10"></div>
+        <div class="image poke04 img11"></div>
+        <div class="image poke04 img12"></div>
+        <div class="image poke04 img13"></div>
+        <div class="image poke04 img14"></div>
+        <div class="image poke04 img15"></div>
+        <div class="image poke04 img16"></div>
+        <div class="image poke04 img17"></div>
+        <div class="image poke04 img18"></div>
+        <div class="image poke04 img19"></div>
+        <div class="image poke04 img20"></div>
+        <div class="image poke04 img21"></div>
+        <div class="image poke04 img22"></div>
+        <div class="image poke04 img23"></div>
+        <div class="image poke04 img24"></div>
+        <div class="image poke04 img25"></div>
+        <div class="image poke05 img01"></div>
+        <div class="image poke05 img02"></div>
+        <div class="image poke05 img03"></div>
+        <div class="image poke05 img04"></div>
+        <div class="image poke05 img05"></div>
+        <div class="image poke05 img06"></div>
+        <div class="image poke05 img07"></div>
+        <div class="image poke05 img08"></div>
+        <div class="image poke05 img09"></div>
+        <div class="image poke05 img10"></div>
+        <div class="image poke05 img11"></div>
+        <div class="image poke05 img12"></div>
+        <div class="image poke05 img13"></div>
+        <div class="image poke05 img14"></div>
+        <div class="image poke05 img15"></div>
+        <div class="image poke05 img16"></div>
+        <div class="image poke05 img17"></div>
+        <div class="image poke05 img18"></div>
+        <div class="image poke05 img19"></div>
+        <div class="image poke05 img20"></div>
+        <div class="image poke05 img21"></div>
+        <div class="image poke05 img22"></div>
+        <div class="image poke05 img23"></div>
+        <div class="image poke05 img24"></div>
+        <div class="image poke05 img25"></div>
+        <div class="image poke06 img01"></div>
+        <div class="image poke06 img02"></div>
+        <div class="image poke06 img03"></div>
+        <div class="image poke06 img04"></div>
+        <div class="image poke06 img05"></div>
+        <div class="image poke06 img06"></div>
+        <div class="image poke06 img07"></div>
+        <div class="image poke06 img08"></div>
+        <div class="image poke06 img09"></div>
+        <div class="image poke06 img10"></div>
+        <div class="image poke06 img11"></div>
+        <div class="image poke06 img12"></div>
+        <div class="image poke06 img13"></div>
+        <div class="image poke06 img14"></div>
+        <div class="image poke06 img15"></div>
+        <div class="image poke06 img16"></div>
+        <div class="image poke06 img17"></div>
+        <div class="image poke06 img18"></div>
+        <div class="image poke06 img19"></div>
+        <div class="image poke06 img20"></div>
+        <div class="image poke06 img21"></div>
+        <div class="image poke06 img22"></div>
+        <div class="image poke06 img23"></div>
+        <div class="image poke06 img24"></div>
+        <div class="image poke06 img25"></div>
+        <div class="image poke07 img01"></div>
+        <div class="image poke07 img02"></div>
+        <div class="image poke07 img03"></div>
+        <div class="image poke07 img04"></div>
+        <div class="image poke07 img05"></div>
+        <div class="image poke07 img06"></div>
+        <div class="image poke07 img07"></div>
+        <div class="image poke07 img08"></div>
+        <div class="image poke07 img09"></div>
+        <div class="btnDiv">
+            <input type="button" id="reverseBtn" value="선택반전"/>
+            <label class="linkLabel" for="linkStr">코드 : </label>
+            <input type="text" id="linkStr" class="linkStr" value="" maxlength="27"/>
+        </div>
+    </body>
+</html>
+<script>
+    var digits = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/';
+    var binArray = ['000000','000001','000010','000011','000100','000101','000110','000111',
+                      '001000','001001','001010','001011','001100','001101','001110','001111',
+                      '010000','010001','010010','010011','010100','010101','010110','010111',
+                      '011000','011001','011010','011011','011100','011101','011110','011111',
+                      '100000','100001','100010','100011','100100','100101','100110','100111',
+                      '101000','101001','101010','101011','101100','101101','101110','101111',
+                      '110000','110001','110010','110011','110100','110101','110110','110111',
+                      '111000','111001','111010','111011','111100','111101','111110','111111'];
+    var query = window.location.search;
+    var param = new URLSearchParams(query);
+    var code = param.get('code');
+
+    var linkStr = document.getElementById('linkStr');
+        linkStr.value = code;
+
+    var image = document.querySelectorAll('.image');
+    var decoded = decode(code);
+    for (var i = 0 ; i < image.length; i++) {
+        if(decoded && decoded[i] == '1') {
+            image[i].classList.toggle("selected");
+        }
+
+        image[i].addEventListener('click', function(event){
+            event.target.classList.toggle("selected");
+
+            createLink();
+        });
+    }
+
+    var reverseBtn = document.getElementById('reverseBtn');
+    reverseBtn.addEventListener('click', function(event){
+        var image = document.querySelectorAll('.image');
+
+        for (var i = 0 ; i < image.length; i++) {
+            image[i].classList.toggle("selected");
+        }
+
+        createLink();
+    });
+    
+    function createLink() {
+        var image = document.querySelectorAll('.image');
+        var codeStr = '';
+
+        for (var i = 0 ; i < image.length; i++) {
+            codeStr += (image[i].classList.contains('selected')?'1':'0');
+        }
+        var linkStr = document.getElementById('linkStr');
+        linkStr.value = encode(codeStr + '000');
+    }
+
+    function decode(code) {
+        if(code) {
+            var decodedCode = '';
+            for(var i = 0; i < code.length; i++) {
+                decodedCode += binArray[digits.indexOf(code[i])];
+            }
+            return decodedCode;
+        }
+        return code;
+    }
+
+    function encode(code) {
+        var encodedCode = '';
+        for(var i = 0; i < (parseInt(code.length/6)); i++) {
+            encodedCode += digits.charAt(parseInt(code.substr(i*6,6),2));
+        }
+        return encodedCode;
+    }
+</script>
