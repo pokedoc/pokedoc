@@ -214,6 +214,7 @@
         <div class="image poke07 img09"></div>
         <div class="btnDiv">
             <input type="button" id="reverseBtn" value="선택반전"/>
+            <input type="button" id="linkBtn" value="링크복사"/>
             <label class="linkLabel" for="linkStr">URL : </label>
             <input type="text" id="linkStr" class="linkStr" value="https://pokedoc.github.io/pokedoc/?code=" />
         </div>
@@ -260,6 +261,16 @@
         }
 
         createLink();
+    });
+
+    var linkBtn = document.getElementById('linkBtn');
+    linkBtn.addEventListener('click', function(event){
+        var content = document.getElementById('linkStr');
+    
+        content.select();
+        document.execCommand('copy');
+
+        alert("링크가 복사되었습니다!");
     });
     
     function createLink() {
