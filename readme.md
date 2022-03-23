@@ -8,8 +8,8 @@ https://pokedoc.github.io/pokedoc/
 <img src="https://pokedoc.github.io/pokedoc/image/pokedoc.png">
 
 1. 이미지 저장 버튼 추가
-화면의 열 갯수대로 이미지 저장
-원하는 사이즈로 창크기 조절 후 이미지 저장버튼을 클릭
+(화면의 열 갯수대로 이미지 저장
+원하는 사이즈로 창크기 조절 후 이미지 저장버튼을 클릭)
 
 2. 선택 카운트 표시 추가
 
