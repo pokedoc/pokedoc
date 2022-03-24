@@ -288,6 +288,7 @@
             link.href = myImage;
             document.body.appendChild(link);
             link.click();
+            document.body.removeChild(link);
         });
     });
 
@@ -297,6 +298,7 @@
     
         content.select();
         document.execCommand('copy');
+        content.setSelectionRange(0, 0);
 
         alert("링크가 복사되었습니다!");
     });
