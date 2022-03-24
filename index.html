@@ -50,6 +50,9 @@
             .title {text-align:center; font-size:20px; margin-bottom:20px; color:white;}
             .linkStr {width:100%; max-width: 300px; margin-top:10px;}
             .linkLabel, .checkCnt {color:white; margin-bottom: 10px;}
+            .textDiv {color:white; margin-top:20px;}
+            .textDiv ul {list-style: decimal; padding-left:20px; margin-top:5px;}
+            .textDiv ul li span {color:crimson;}
         </style>
     </head>
     <body>
@@ -223,6 +226,14 @@
             <div>
                 <textarea id="linkStr" class="linkStr" >https://pokedoc.github.io/pokedoc/?code=</textarea>
             </div>
+        </div>
+        <div class="textDiv">
+            <span>※ 사용법</span>
+            <ul>
+                <li>선택반전 : 포켓몬이 선택 반전 됩니다.</li>
+                <li>이미지 저장 : 현재 선택된 상태로 이미지가 저장됩니다. <br><span>* 현재 화면의 배열대로 저장되기 때문에 창크기 조절 후 이미지 저장 하시면 원하는 배열로 저장 됩니다. (PC에서 하는것을 추천)</span></li>
+                <li>링크복사 : 현재 선택된 포켓몬이 포함된 URL을 복사합니다 <br><span>* 복사한 URL로 접속시 선택한 포켓몬이 유지됩니다.</span></li>
+            </ul>
         </div>
     </body>
 </html>
