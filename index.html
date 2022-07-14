@@ -236,9 +236,10 @@
                 <li>링크복사 : 현재 선택된 포켓몬이 포함된 URL을 복사합니다 <br><span>* 복사한 URL로 접속시 선택한 포켓몬이 유지됩니다.</span></li>
             </ul>
         </div>
+        <canvas id="tCanvas" style="display: none;"></canvas>
     </body>
 </html>
-<script src="js/html2canvas.min.js"></script>
+<script src="js/downImagePokedoc.js"></script>
 <script>
     var url = 'https://pokedoc.github.io/pokedoc/?code=';
     var digits = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_';
@@ -282,7 +283,7 @@
 
     var saveBtn = document.getElementById('saveBtn');
     saveBtn.addEventListener('click', function(event){
-        html2canvas(document.querySelector("#imageDiv")).then(function(canvas){
+        downImagePokeDoc(document.querySelector("#imageDiv"), function(canvas) {
             var myImage = canvas.toDataURL();
             var link = document.createElement('a');
             link.download = 'Pokedoc.png';
@@ -303,7 +304,7 @@
 
         alert("링크가 복사되었습니다!");
     });
-    
+
     function createLink() {
         var image = document.querySelectorAll('.image > div');
         var codeStr = '';
