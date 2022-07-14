@@ -366,6 +366,7 @@
                     console.log(indexX, indexY);
 
                     ctx.drawImage(img,pluxX * posX,pluxY * posY, oW * pluxX, oH * pluxY,(indexX * oW + (indexX * offset)),(indexY * oH + (indexY * offset)),oW,oH);
+                    ctx.strokeRect((indexX * oW + (indexX * offset)),(indexY * oH + (indexY * offset)),oW,oH);
 
                     if(result.children[j].c == "selected") {
                         ctx.fillStyle="rgb(0,0,0,0.7)";
