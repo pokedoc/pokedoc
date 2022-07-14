@@ -1,9 +1,13 @@
-포켓몬스터 2022 띠부띠부씰 도감 ver 1.1
+포켓몬스터 2022 띠부띠부씰 도감 ver 1.2
 ==========================
 
 https://pokedoc.github.io/pokedoc/
 
 ## 버전 히스토리
+### ver 1.2
+1. 이미지 다운로드 기능 개선
+2. 이미지 다운시 한줄에 최소 띠부씰이 12개씩 배치되도록 수정
+
 ### ver 1.1
 <img src="https://pokedoc.github.io/pokedoc/image/pokedoc.png">
 
