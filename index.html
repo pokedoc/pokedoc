@@ -236,7 +236,6 @@
                 <li>링크복사 : 현재 선택된 포켓몬이 포함된 URL을 복사합니다 <br><span>* 복사한 URL로 접속시 선택한 포켓몬이 유지됩니다.</span></li>
             </ul>
         </div>
-        <canvas id="tCanvas" width="1000" height="1000" style="border: 1px solid black; display: none;"></canvas>
     </body>
 </html>
 <script src="js/html2canvas.min.js"></script>
@@ -283,32 +282,7 @@
 
     var saveBtn = document.getElementById('saveBtn');
     saveBtn.addEventListener('click', function(event){
-        var imgDiv = document.querySelector("#imageDiv");
-        var resultArray = [];
-        var tempSrc = "";
-    
-        for(var i = 0; i < imgDiv.children.length; i++) {
-            var style = window.getComputedStyle ? getComputedStyle(imgDiv.children[i], null) : imgDiv.children[i].currentStyle;
-
-            if(tempSrc !== style.backgroundImage) {
-                tempSrc = style.backgroundImage;
-    
-                var result = {i: style.backgroundImage, children:[{i:i, x:style.backgroundPositionX, y:style.backgroundPositionY, s:style.backgroundSize, c:imgDiv.children[i].children[0].classList.value}]};
-                resultArray.push(result);
-            } else {
-                resultArray[(resultArray.length - 1)].children.push({i:i, x:style.backgroundPositionX, y:style.backgroundPositionY, s:style.backgroundSize, c:imgDiv.children[i].children[0].classList.value});
-            }
-        }
-
-        var proArray = [];
-
-        for(var i = 0; i < resultArray.length; i++) {
-            proArray.push(imgLoad(resultArray[i],i,imgDiv.children.length));
-        }
-
-        Promise.all(proArray).then(function(value) {
-            var canvas = document.getElementById("tCanvas");
-
+        html2canvas(document.querySelector("#imageDiv")).then(function(canvas){
             var myImage = canvas.toDataURL();
             var link = document.createElement('a');
             link.download = 'Pokedoc.png';
@@ -329,56 +303,7 @@
 
         alert("링크가 복사되었습니다!");
     });
-
-    function imgLoad(result, i, total) {
-        return new Promise(function(resolve, reject) {
-            var canvas = document.getElementById("tCanvas");
-            var ctx = canvas.getContext("2d");
     
-            var offset = 10;
-            var col = 12;
-            var row = Math.floor(total / col) + 1;
-    
-            var oW = 84;
-            var oH = 111;
-    
-            canvas.width = oW * col + (col - 1) * offset;
-            canvas.height = oH * row + (row - 1) * offset;
-
-            let img = new Image();
-            img.src = 'image/re_pokemon' + (i + 1) + '.png';
-            img.i = i;
-            img.onload = function() {
-                var w = img.width;
-                var h = img.height;
-
-                for(var j = 0; j < result.children.length; j++) {
-                    var pluxArray = result.children[j].s.split(' ');
-                    var pluxX = w / Number(pluxArray[0].replace('px',''));
-                    var pluxY = h / Number(pluxArray[1].replace('px',''));
-
-                    var posX = Number(result.children[j].x.replace('-','').replace('px',''));
-                    var posY = Number(result.children[j].y.replace('-','').replace('px',''));
-                    
-                    let indexX = result.children[j].i % col;
-                    let indexY = Math.floor(result.children[j].i / col);
-
-                    console.log(indexX, indexY);
-
-                    ctx.drawImage(img,pluxX * posX,pluxY * posY, oW * pluxX, oH * pluxY,(indexX * oW + (indexX * offset)),(indexY * oH + (indexY * offset)),oW,oH);
-                    ctx.strokeRect((indexX * oW + (indexX * offset)),(indexY * oH + (indexY * offset)),oW,oH);
-
-                    if(result.children[j].c == "selected") {
-                        ctx.fillStyle="rgb(0,0,0,0.7)";
-                        ctx.fillRect((indexX * oW + (indexX * offset)),(indexY * oH + (indexY * offset)),oW,oH);
-                    }
-                }
-
-                resolve(result);
-            }
-        });
-    }
-   
     function createLink() {
         var image = document.querySelectorAll('.image > div');
         var codeStr = '';
