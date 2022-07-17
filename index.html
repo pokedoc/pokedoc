@@ -236,27 +236,18 @@
                 <li>링크복사 : 현재 선택된 포켓몬이 포함된 URL을 복사합니다 <br><span>* 복사한 URL로 접속시 선택한 포켓몬이 유지됩니다.</span></li>
             </ul>
         </div>
-        <canvas id="tCanvas" style="display: none;"></canvas>
     </body>
 </html>
-<script src="js/downImagePokedoc.min.js?v=1"></script>
+<script src="js/pokedocUtil.js?v=1"></script>
 <script>
     var url = 'https://pokedoc.github.io/pokedoc/?code=';
-    var digits = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_';
-    var binArray = ['000000','000001','000010','000011','000100','000101','000110','000111',
-                      '001000','001001','001010','001011','001100','001101','001110','001111',
-                      '010000','010001','010010','010011','010100','010101','010110','010111',
-                      '011000','011001','011010','011011','011100','011101','011110','011111',
-                      '100000','100001','100010','100011','100100','100101','100110','100111',
-                      '101000','101001','101010','101011','101100','101101','101110','101111',
-                      '110000','110001','110010','110011','110100','110101','110110','110111',
-                      '111000','111001','111010','111011','111100','111101','111110','111111'];
+
     var query = window.location.search;
     var param = new URLSearchParams(query);
     var code = param.get('code');
 
     var image = document.querySelectorAll('.image > div');
-    var decoded = decode(code);
+    var decoded = PokedocUtil.decode(code);
     for (var i = 0 ; i < image.length; i++) {
         if(decoded && decoded[i] == '1') {
             image[i].classList.toggle("selected");
@@ -283,7 +274,7 @@
 
     var saveBtn = document.getElementById('saveBtn');
     saveBtn.addEventListener('click', function(event){
-        downImagePokeDoc(document.querySelector("#imageDiv"), function(canvas) {
+        PokedocUtil.imageDownload(document.querySelector("#imageDiv"), function(canvas) {
             var myImage = canvas.toDataURL();
             var link = document.createElement('a');
             link.download = 'Pokedoc.png';
@@ -318,28 +309,9 @@
             }
         }
         var linkStr = document.getElementById('linkStr');
-        linkStr.value = url + encode(codeStr + '000');
+        linkStr.value = url + PokedocUtil.encode(codeStr + '000');
 
         var cntStr = document.getElementById('cnt');
         cntStr.innerHTML = cnt;
-    }
-
-    function decode(code) {
-        if(code) {
-            var decodedCode = '';
-            for(var i = 0; i < code.length; i++) {
-                decodedCode += binArray[digits.indexOf(code[i])];
-            }
-            return decodedCode;
-        }
-        return code;
-    }
-
-    function encode(code) {
-        var encodedCode = '';
-        for(var i = 0; i < (parseInt(code.length/6)); i++) {
-            encodedCode += digits.charAt(parseInt(code.substr(i*6,6),2));
-        }
-        return encodedCode;
     }
 </script>
