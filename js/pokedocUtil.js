@@ -14,7 +14,7 @@
 
     const offset = 8;
 
-    const borderOffset = 4;
+    const borderOffset = 2;
 
     var module = {
         imageDownload : (imgDiv, callback) => {
