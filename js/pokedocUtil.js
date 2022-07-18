@@ -97,8 +97,8 @@
 
                 for(var j = 0; j < result.children.length; j++) {
                     var pluxArray = result.children[j].s.split(' ');
-                    var pluxX = w / Number(pluxArray[0].replace('px',''));
-                    var pluxY = h / Number(pluxArray[1].replace('px',''));
+                    var pluxX = Math.floor(w / Number(pluxArray[0].replace('px','')));
+                    var pluxY = Math.floor(h / Number(pluxArray[1].replace('px','')));
 
                     var posX = Number(result.children[j].x.replace('-','').replace('px',''));
                     var posY = Number(result.children[j].y.replace('-','').replace('px',''));
